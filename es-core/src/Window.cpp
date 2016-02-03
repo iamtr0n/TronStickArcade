@@ -224,27 +224,7 @@ void Window::setAllowSleep(bool sleep)
 	mAllowSleep = sleep;
 }
 
-void Window::renderLoadingScreen()
-{
-	Eigen::Affine3f trans = Eigen::Affine3f::Identity();
-	Renderer::setMatrix(trans);
-	Renderer::drawRect(0, 0, Renderer::getScreenWidth(), Renderer::getScreenHeight(), 0xFFFFFFFF);
-
-	ImageComponent splash(this);
-	splash.setResize(Renderer::getScreenWidth() * 0.6f, 0.0f);
-	splash.setImage("");
-	splash.setPosition((Renderer::getScreenWidth() - splash.getSize().x()) / 2, (Renderer::getScreenHeight() - splash.getSize().y()) / 2 * 0.6f);
-	splash.render(trans);
-
-	auto& font = mDefaultFonts.at(1);
-	TextCache* cache = font->buildTextCache("LOADING...", 0, 0, 0x656565FF);
-	trans = trans.translate(Eigen::Vector3f(round((Renderer::getScreenWidth() - cache->metrics.size.x()) / 2.0f), 
-		round(Renderer::getScreenHeight() * 0.835f), 0.0f));
-	Renderer::setMatrix(trans);
-	font->renderTextCache(cache);
-	delete cache;
-
-	Renderer::swapBuffers();
+void
 }
 
 void Window::renderHelpPromptsEarly()
