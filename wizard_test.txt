@@ -1,5 +1,0 @@
-name="Spartan"\
-url="http://spartanpixel.net/Kodi/spartan/spartan_091515.zip"
-img="http://spartanpixel.net/Kodi/spartan/spartanlogo.png"\
-fanart="http://spartanpixel.net/Kodi/spartan/splash.jpg"\
-description="Spartan Wizard setup"}
